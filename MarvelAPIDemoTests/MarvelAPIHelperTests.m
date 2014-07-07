@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "MarvelAPIHelper.h"
 #import "SuperHero.h"
-#import "JSONParser.h"
+#import "SuperHeroParser.h"
 
 NSString *const publicKey = @"bb8de9899e25561096de861a230919bf";
 NSString *const privateKey = @"80a1f8e47a66bbbd98b3b6f147e1f76d7daf5ded";
@@ -40,9 +40,16 @@ NSString *const privateKey = @"80a1f8e47a66bbbd98b3b6f147e1f76d7daf5ded";
 - (void)testCanObtainSuperHeroFromData {
     MarvelAPIHelper *mah = [[MarvelAPIHelper alloc] initWithPublicKey:publicKey andPrivateKey:privateKey];
     NSData *data = [mah dataForSuperHeroNamed:@"hulk"];
-    SuperHero *superHero = [JSONParser superHeroWithData:data];
+    SuperHero *superHero = [SuperHeroParser superHeroWithData:data];
     XCTAssertEqualObjects(@"Hulk", superHero.name, @"");
     
+}
+
+- (void)testBlock {
+    MarvelAPIHelper *mah = [[MarvelAPIHelper alloc] initWithPublicKey:publicKey andPrivateKey:privateKey];
+    [mah dataForSuperHeroNamed:@"Hulk" completion:^(NSData *resultData) {
+       
+    }];
 }
 
 @end

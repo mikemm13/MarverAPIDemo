@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Diego Freniche Brito. All rights reserved.
 //
 
-#import "JSONParser.h"
+#import "SuperHeroParser.h"
 
-@implementation JSONParser
+@implementation SuperHeroParser
 
 + (SuperHero *)superHeroWithData:(NSData *)data{
     NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];

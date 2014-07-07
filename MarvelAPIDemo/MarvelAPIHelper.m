@@ -50,22 +50,35 @@
     NSString *ts = [self newTimestamp];
     NSString *authString = [self authorizationStringWithTimeStamp:ts];
     NSString *get = [NSString stringWithFormat:@"%@%@?ts=%@&apikey=%@&hash=%@", MARVEL_BASE_URL, @"comics", ts, self.publicKey, authString];
-    
+    NSString *getUTF8 = [NSString stringWithUTF8String:[get UTF8String]];
     NSArray *comics;
     
-    NSURL *url = [NSURL URLWithString:get];
+    NSURL *url = [NSURL URLWithString:getUTF8];
     
     NSData *data = [NSData dataWithContentsOfURL:url];
     
     return comics;
 }
 
+- (void)dataForSuperHeroNamed:(NSString *)name completion:(void (^)(NSData *resultData))completionBlock{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSData *data = [self dataForSuperHeroNamed:name];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionBlock(data);
+        });
+    });
+}
+
 - (NSData *)dataForSuperHeroNamed:(NSString *)name{
+    
+//    NSAssert(true, @"");
+    
     NSString *ts = [self newTimestamp];
     NSString *authString = [self authorizationStringWithTimeStamp:ts];
     NSString *get = [NSString stringWithFormat:@"%@%@?name=%@&ts=%@&apikey=%@&hash=%@", MARVEL_BASE_URL, @"characters", name, ts, self.publicKey, authString];
+    NSString *getUTF8 = [get stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    NSURL *url = [NSURL URLWithString:get];
+    NSURL *url = [NSURL URLWithString:getUTF8];
     
     NSData *data = [NSData dataWithContentsOfURL:url];
     

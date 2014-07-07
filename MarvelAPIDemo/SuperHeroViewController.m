@@ -8,7 +8,7 @@
 
 #import "SuperHeroViewController.h"
 #import "SuperHero.h"
-#import "JSONParser.h"
+#import "SuperHeroParser.h"
 #import "MarvelAPIHelper.h"
 
 
@@ -37,15 +37,16 @@ NSString *const privateKey = @"80a1f8e47a66bbbd98b3b6f147e1f76d7daf5ded";
     
     NSString *name = self.superHeroName.text;
     MarvelAPIHelper *marvelApiHelper = [[MarvelAPIHelper alloc] initWithPublicKey:publicKey andPrivateKey:privateKey];
-    NSData *data = [marvelApiHelper dataForSuperHeroNamed:name ];
-    SuperHero *superHero = [JSONParser superHeroWithData:data];
-    self.superHeroImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:superHero.thumbnail]]];
-    [self showDescription:superHero.characterDescription];
-    [self.superHeroName resignFirstResponder];
+    [marvelApiHelper dataForSuperHeroNamed:name completion:^(NSData *resultData) {
+        SuperHero *superHero = [SuperHeroParser superHeroWithData:resultData];
+        self.superHeroImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:superHero.thumbnail]]];
+        [self showDescription:superHero.characterDescription];
+        [self.superHeroName resignFirstResponder];
+    }];
 }
 
 - (void) showDescription:(NSString *) description{
-    [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionTransitionCurlUp animations:^{
+    [UIView animateWithDuration:2 animations:^{
         self.superHeroDescription.text = description;
         self.superHeroDescription.center = CGPointMake(self.view.center.x, self.view.center.y);
     } completion:nil];

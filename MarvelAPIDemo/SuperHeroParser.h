@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SuperHero.h"
 
-@interface JSONParser : NSObject
+@interface SuperHeroParser : NSObject
 
 + (SuperHero*)superHeroWithData:(NSData *)data;
 

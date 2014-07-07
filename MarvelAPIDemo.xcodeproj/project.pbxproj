@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49FA2205196AA73500289A26 /* SuperHero.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FA2204196AA73500289A26 /* SuperHero.m */; };
-		49FA2208196AA85D00289A26 /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FA2207196AA85D00289A26 /* JSONParser.m */; };
+		49FA2208196AA85D00289A26 /* SuperHeroParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FA2207196AA85D00289A26 /* SuperHeroParser.m */; };
 		49FA220A196AAB7C00289A26 /* Marvel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FA2209196AAB7C00289A26 /* Marvel.storyboard */; };
 		49FA2212196AAD7A00289A26 /* SuperHeroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FA2211196AAD7A00289A26 /* SuperHeroViewController.m */; };
 		99B1D39A1964003600E907C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B1D3991964003600E907C3 /* Foundation.framework */; };
@@ -41,8 +41,8 @@
 /* Begin PBXFileReference section */
 		49FA2203196AA73500289A26 /* SuperHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperHero.h; sourceTree = "<group>"; };
 		49FA2204196AA73500289A26 /* SuperHero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperHero.m; sourceTree = "<group>"; };
-		49FA2206196AA85D00289A26 /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
-		49FA2207196AA85D00289A26 /* JSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONParser.m; sourceTree = "<group>"; };
+		49FA2206196AA85D00289A26 /* SuperHeroParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperHeroParser.h; sourceTree = "<group>"; };
+		49FA2207196AA85D00289A26 /* SuperHeroParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperHeroParser.m; sourceTree = "<group>"; };
 		49FA2209196AAB7C00289A26 /* Marvel.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Marvel.storyboard; sourceTree = "<group>"; };
 		49FA2210196AAD7A00289A26 /* SuperHeroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperHeroViewController.h; sourceTree = "<group>"; };
 		49FA2211196AAD7A00289A26 /* SuperHeroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperHeroViewController.m; sourceTree = "<group>"; };
@@ -163,8 +163,8 @@
 				99B1D3C91964005600E907C3 /* NSString+MD5.m */,
 				99B1D3CD1964027C00E907C3 /* MarvelAPIHelper.h */,
 				99B1D3CE1964027C00E907C3 /* MarvelAPIHelper.m */,
-				49FA2206196AA85D00289A26 /* JSONParser.h */,
-				49FA2207196AA85D00289A26 /* JSONParser.m */,
+				49FA2206196AA85D00289A26 /* SuperHeroParser.h */,
+				49FA2207196AA85D00289A26 /* SuperHeroParser.m */,
 			);
 			path = MarvelAPIDemo;
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 			files = (
 				99B1D3CF1964027C00E907C3 /* MarvelAPIHelper.m in Sources */,
 				99B1D3CA1964005600E907C3 /* NSString+MD5.m in Sources */,
-				49FA2208196AA85D00289A26 /* JSONParser.m in Sources */,
+				49FA2208196AA85D00289A26 /* SuperHeroParser.m in Sources */,
 				49FA2212196AAD7A00289A26 /* SuperHeroViewController.m in Sources */,
 				49FA2205196AA73500289A26 /* SuperHero.m in Sources */,
 				99B1D3AA1964003600E907C3 /* AppDelegate.m in Sources */,
