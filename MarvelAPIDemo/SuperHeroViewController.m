@@ -40,6 +40,8 @@ NSString *const privateKey = @"80a1f8e47a66bbbd98b3b6f147e1f76d7daf5ded";
     MarvelAPIHelper *marvelApiHelper = [[MarvelAPIHelper alloc] initWithPublicKey:publicKey andPrivateKey:privateKey];
     [marvelApiHelper dataForSuperHeroNamed:name completion:^(NSData *resultData) {
         SuperHero *superHero = [SuperHeroParser superHeroWithData:resultData];
+        
+            
         [ImageDownloader downloadImageUsingUrl:superHero.thumbnail completion:^(UIImage *image) {
             self.superHeroImage.image = image;
         }];
