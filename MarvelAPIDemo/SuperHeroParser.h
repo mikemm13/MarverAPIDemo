@@ -12,5 +12,6 @@
 @interface SuperHeroParser : NSObject
 
 + (SuperHero*)superHeroWithData:(NSData *)data;
++ (NSArray *)superHeroesWithData:(NSData *)data;
 
 @end

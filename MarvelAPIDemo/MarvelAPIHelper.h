@@ -19,4 +19,7 @@
 - (NSData *)dataForSuperHeroNamed:(NSString *)name;
 
 - (void)dataForSuperHeroNamed:(NSString *)name completion:(void (^)(NSData *resultData))completionBlock;
+
+- (void)dataForSuperHeroesWithCompletion:(void (^)(NSData *resultData))completionBlock;
+
 @end

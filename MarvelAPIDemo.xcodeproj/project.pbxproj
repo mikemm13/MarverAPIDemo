@@ -12,6 +12,7 @@
 		49FA220A196AAB7C00289A26 /* Marvel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FA2209196AAB7C00289A26 /* Marvel.storyboard */; };
 		49FA2212196AAD7A00289A26 /* SuperHeroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FA2211196AAD7A00289A26 /* SuperHeroViewController.m */; };
 		49FA2215196AE05600289A26 /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FA2214196AE05600289A26 /* ImageDownloader.m */; };
+		49FA2218196AF2F500289A26 /* HeroesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FA2217196AF2F500289A26 /* HeroesViewController.m */; };
 		99B1D39A1964003600E907C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B1D3991964003600E907C3 /* Foundation.framework */; };
 		99B1D39C1964003600E907C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B1D39B1964003600E907C3 /* CoreGraphics.framework */; };
 		99B1D39E1964003600E907C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B1D39D1964003600E907C3 /* UIKit.framework */; };
@@ -49,6 +50,8 @@
 		49FA2211196AAD7A00289A26 /* SuperHeroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperHeroViewController.m; sourceTree = "<group>"; };
 		49FA2213196AE05600289A26 /* ImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloader.h; sourceTree = "<group>"; };
 		49FA2214196AE05600289A26 /* ImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloader.m; sourceTree = "<group>"; };
+		49FA2216196AF2F500289A26 /* HeroesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroesViewController.h; sourceTree = "<group>"; };
+		49FA2217196AF2F500289A26 /* HeroesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroesViewController.m; sourceTree = "<group>"; };
 		99B1D3961964003600E907C3 /* MarvelAPIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelAPIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B1D3991964003600E907C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		99B1D39B1964003600E907C3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -118,6 +121,8 @@
 			children = (
 				49FA2210196AAD7A00289A26 /* SuperHeroViewController.h */,
 				49FA2211196AAD7A00289A26 /* SuperHeroViewController.m */,
+				49FA2216196AF2F500289A26 /* HeroesViewController.h */,
+				49FA2217196AF2F500289A26 /* HeroesViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -308,6 +313,7 @@
 				99B1D3AA1964003600E907C3 /* AppDelegate.m in Sources */,
 				49FA2215196AE05600289A26 /* ImageDownloader.m in Sources */,
 				99B1D3A61964003600E907C3 /* main.m in Sources */,
+				49FA2218196AF2F500289A26 /* HeroesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

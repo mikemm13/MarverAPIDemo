@@ -69,6 +69,26 @@
     });
 }
 
+- (void)dataForSuperHeroesWithCompletion:(void (^)(NSData *))completionBlock{
+    NSString *ts = [self newTimestamp];
+    NSString *authString = [self authorizationStringWithTimeStamp:ts];
+    NSString *get = [NSString stringWithFormat:@"%@%@?ts=%@&apikey=%@&hash=%@", MARVEL_BASE_URL, @"characters", ts, self.publicKey, authString];
+    NSString *getUTF8 = [get stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+    NSURL *url = [NSURL URLWithString:getUTF8];
+        
+    NSURLSession *session = [NSURLSession sharedSession];
+    [[session dataTaskWithURL:[NSURL URLWithString:getUTF8] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSData *dataObtained = [NSData dataWithContentsOfURL:url];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionBlock(dataObtained);
+        });
+        
+    }] resume];
+
+}
+
 - (NSData *)dataForSuperHeroNamed:(NSString *)name{
     
 //    NSAssert(true, @"");
